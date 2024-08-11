@@ -36,3 +36,39 @@ Mux_2_1_555 mu_3 (c1,c2,s[2],y);
 endmodule
 ```
 Refer _tb in source code files.
+
+
+# Post Lab
+Simple Alu
+``` verilog
+module alu_simple(a,b,s,y);
+input [3:0]a,b;
+input[2:0]s;
+output reg[7:0]y;
+always @(*)
+case (s)
+ 3'b000: y[0] = a&b;
+ 3'b001: y[1] = a|b;
+ 3'b010: y[2] = a^b;
+ 3'b011: y[3] = ~(a&b);
+ 3'b100: y[4] = ~(a|b);
+ 3'b101: y[5] = ~(a^b);
+ 3'b110: y[6] = a + b;
+ 3'b111: y[7] = a - b; 
+endcase
+endmodule
+```
+This ALU consists of basic operations like
+
+**Select lines** | **Operations** |
+:---------------:|:--------------:|
+`000`            | Bitwise AND
+`001`            | Bitwise OR
+`010`            | Bitwise EXOR
+`011`            | Bitwise NAND
+`100`            | Bitwise NOR
+`101`            | Bitwise XNOR
+`110`            | Arithmetic Add
+`111`            | Arithmetic Sub
+
+Refer test_bench file in source codes.
