@@ -71,4 +71,8 @@ This ALU consists of basic operations like
 `110`            | Arithmetic Add
 `111`            | Arithmetic Sub
 
+Output Waveform
+
+![waveform](https://github.com/user-attachments/assets/52285564-e4c6-4591-98ba-c719c86fee53)
+
 Refer test_bench file in source codes.
