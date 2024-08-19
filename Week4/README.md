@@ -40,6 +40,62 @@ output [3:0]q;
  tff_555 f4(q[2],1'b1,rstn,q[3]);
 endmodule
 ```
+## Post_Lab
+Mod_10 Counter
+```verilog
+module mod_10(
+input clk,rst,enable,
+output reg [3:0]counter_output
+);
 
+always@ (posedge clk)
+begin 
+if( rst | counter_output==4'b1001)
+counter_output <= 4'b0000;
+else if(enable)
+counter_output <= counter_output + 1;
+else
+counter_output <= 0;
+end
+endmodule
+```
+
+Test_bench for Mod_10
+```verilog
+module mod_10_tb;
+// Inputs
+reg clk;
+reg rst;
+reg enable;
+// Outputs
+wire [3:0] counter_output;
+
+// Instantiate the Unit Under Test (UUT)
+mod_10 uut (
+.clk(clk),
+.rst(rst),
+.enable(enable),
+.counter_output(counter_output)
+);
+always
+#50 clk= ~ clk;
+
+initial begin
+clk=0;
+// Initialize Inputs
+rst = 0;
+enable = 0;
+#100;
+rst=0;
+enable=1;
+#100;
+rst=0;
+enable=1;
+
+// Wait 100 ns for global reset to finish
+#100;
+end
+endmodule
+```
 
 
