@@ -37,3 +37,5 @@ cmos c1(out,i0,sbar,s);
 cmos c2(out,i1,s,sbar);
 endmodule
 ```
+Output Waveform
+![image](https://github.com/user-attachments/assets/03c597a8-0837-40b1-bc72-fa6be0109ec4)
