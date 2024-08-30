@@ -1,4 +1,7 @@
 # Week - 6
+This Week consists of making 'NOT','NAND','NOR' in Switch level Modelling.
+![image](https://github.com/user-attachments/assets/92db19d3-0d85-42b7-83db-4e7554c08ede)
+
 ```verilog
 module CMOS_logic(
 input a,b,c,d,e,
@@ -21,3 +24,13 @@ nmos(y,gnd,c);
 nmos(y,gnd,d);
 endmodule
 ````
+## 2:1 Mux Using Switch Level Modelling
+
+```verilog
+module Cmos_Mux(input s,i0,i1, output out);
+wire sbar;
+not(sbar,s);
+cmos c1(out,i0,sbar,s);
+cmos c2(out,i1,s,sbar);
+endmodule
+```
