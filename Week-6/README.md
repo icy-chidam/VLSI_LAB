@@ -26,6 +26,9 @@ endmodule
 ````
 ## 2:1 Mux Using Switch Level Modelling
 
+![image](https://github.com/user-attachments/assets/5b4e5885-c00f-4394-9c4b-5c6db75d076c)
+![image](https://github.com/user-attachments/assets/beb71096-2d36-48ce-bc76-ea3ccb673056)
+
 ```verilog
 module Cmos_Mux(input s,i0,i1, output out);
 wire sbar;
