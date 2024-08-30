@@ -24,6 +24,8 @@ nmos(y,gnd,c);
 nmos(y,gnd,d);
 endmodule
 ````
+![image](https://github.com/user-attachments/assets/3833a8a2-503d-48f2-b3ee-e6ffc208d4b0)
+
 ## 2:1 Mux Using Switch Level Modelling
 
 ![image](https://github.com/user-attachments/assets/5b4e5885-c00f-4394-9c4b-5c6db75d076c)
