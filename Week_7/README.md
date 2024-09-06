@@ -1,6 +1,7 @@
 # Week-7
 I have implemented 4 bit carry save adder in Verilog with 3 inputs A, B, C of 4-bits and one Carry Input D of 4bits. The following diagram shows the block level implementation of carry save adder
 ![Carry Save adder](https://github.com/user-attachments/assets/c68954bb-fad6-4f68-8b58-46ee2a0fb688)
+
 I have used the instantiation of my previous project RCA [here](https://github.com/icy-chidam/VLSI_LAB/blob/main/Week-2/RCA_FA.v) & Full_Adder [here](https://github.com/icy-chidam/VLSI_LAB/blob/main/Week-2/Fu_add_inst.v)
 ## Code Snippet
 ``` verilog
@@ -27,6 +28,40 @@ Fu_add_inst fa7( .a(d[3]), .b(s0[3]), .cin(c0[2]), .sum(s1[2]), .carry(c1[3]));
 RCA_FA rca1 (.a(c1[3:0]),.b({c0[3],s1[2:0]}), .cin(1'b0),.sum(sum[4:1]), .cout(cout));
 endmodule
 ```
+
+# Test_Bench
+``` verilog
+module carry_save_adder_tb;
+wire [4:0] sum;//output
+wire cout;//output
+reg [3:0] a,b,c,d;//input
+ carry_save_adder uut(
+.a(a),
+.b(b),
+.c(c),
+ .d(d),
+.sum(sum),
+.cout(cout));
+ 
+initial begin
+$display($time, " << Starting the Simulation >>");
+     a=0; b=0; c=0; d=0;
+  #100 a= 4'd10; b=4'd0; c=4'd0; d=4'd0;
+  #100 a= 4'd10; b=4'd10; c=4'd0; d=4'd0;
+  #100 a= 4'd4; b=4'd6; c=4'd12; d=4'd0;
+  #100 a= 4'd11; b=4'd2; c=4'd4; d=4'd7;
+  #100 a= 4'd20; b=4'd0; c=4'd20; d=4'd0;
+  #100 a= 4'd12; b=4'd5; c=4'd10; d=4'd10;
+  #100 a= 4'd7; b=4'd6; c=4'd12; d=4'd8;
+  #100 a= 4'd15; b=4'd15; c=4'd15; d=4'd15;
+ 
+end
+ 
+initial
+  $monitor("A=%d, B=%d, C=%d,D=%d,Sum= %d, Cout=%d",a,b,c,d,sum,cout);
+endmodule
+```
+
 
 # Post Lab
 ## Power Report for Carry Save Adder
