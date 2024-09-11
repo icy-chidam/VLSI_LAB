@@ -64,11 +64,19 @@ endmodule
 
 
 # Post Lab
-## Power Report for Carry Save Adder
-![PWR_RPT_CSA](https://github.com/user-attachments/assets/50c17935-5f5e-422f-9bbd-da20e6632af3)
+## POWER Report for Ripple Carry Adder
+![PWR_RPT_RCA](https://github.com/user-attachments/assets/df8dd6f6-7aa6-41dd-8f99-fcc76ee25863)
+## AREA Report for Ripple Carry Adder
+![AREA_RPT_RCA](https://github.com/user-attachments/assets/0ab65cb1-8ed5-43db-89a2-00f9993c909b)
 
-## Power Report for Ripple Carry Adder
-![PWR_RPT_RCA](https://github.com/user-attachments/assets/0d749a30-a44b-4eaf-acc2-c7daa9361be4)
+## POWER Report for Carry Look Ahead Adder
+![image](https://github.com/user-attachments/assets/9b02aab5-f014-460a-b77e-e75c9dfa4d2b)
+## AREA Report for Ripple Carry Adder
+![image](https://github.com/user-attachments/assets/f6054dd2-0eeb-44ec-94b0-7f3a8af3c8ed)
+
+
+
+
 
 
 
