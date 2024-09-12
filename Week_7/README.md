@@ -71,7 +71,7 @@ endmodule
 
 ## POWER Report for Carry Look Ahead Adder
 ![image](https://github.com/user-attachments/assets/9b02aab5-f014-460a-b77e-e75c9dfa4d2b)
-## AREA Report for Ripple Carry Adder
+## AREA Report for  Carry Look Ahead Adder
 ![image](https://github.com/user-attachments/assets/f6054dd2-0eeb-44ec-94b0-7f3a8af3c8ed)
 
 
