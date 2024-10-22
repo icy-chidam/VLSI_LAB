@@ -139,5 +139,74 @@ Address = 4'b0000; RD = 1;
 #50; Address = 4'b1111; RD = 1; 
 end 
 endmodule
+```
+# Post_lab
+64_8_bit_ROM
+```verilog
+module ram_64_8(RD, WR, Addres, Data, Output); 
+input[7:0]Data;
+input RD,WR;
+input[7:0] Addres; 
+output reg[7:0]Output;
+reg[7:0]RAM[63:0];
+reg[7:0]Temp;
+always@(Addres) begin
+if(WR) begin
+RAM[Addres]=Data;Temp=RAM[Addres];
+end if(RD)
+begin Output=RAM[Addres]; end
+end
+endmodule
+```
 
+64_8_bit_ROM_test_bench
+``` verilog
+module ram_64_8_tb;
+            reg RD;
+            reg WR;
+            reg [7:0] Addres;
+            reg [7:0] Data;
+            wire [7:0] Output;
+            ram_64_8 uut (
+                        .RD(RD),
+                        .WR(WR),
+                        .Addres(Addres),
+                        .Data(Data),
+                        .Output(Output)
+            );
+            initial begin
+                        RD = 0;WR= 1;Addres= 8'b00000000;Data = 8'b00000000;#30;
+                        RD = 0;WR= 1;Addres= 8'b00000001;Data = 8'b00000001;#30;
+                        RD = 0;WR= 1;Addres= 8'b00000010;Data = 8'b00000010;#30;
+                        Data=8'b00000011; RD = 0;WR=1; Addres= 8'b00000011; #30;
+                        Data=8'b00000100; RD = 0;WR=1; Addres= 8'b00000100; #30;
+                        Data=8'b00000101; RD = 0;WR=1; Addres= 8'b00000101; #30;
+                        Data=8'b00000110; RD = 0;WR=1; Addres= 8'b00000110; #30;
+                        Data=8'b00000111; RD = 0;WR=1; Addres= 8'b00000111; #30;
+                        Data=8'b00001000; RD = 0;WR=1; Addres= 8'b00001000; #30;
+                        Data=8'b00001001; RD = 0;WR=1; Addres= 8'b00001001; #30;
+                        Data=8'b00001010; RD = 0;WR=1; Addres= 8'b00001010; #30;
+                        Data=8'b00001011; RD = 0;WR=1; Addres= 8'b00001011;#30;
+                        Data=8'b00001100; RD = 0;WR=1; Addres= 8'b00001100; #30;
+                        Data=8'b00001101; RD = 0;WR=1; Addres= 8'b00001101; #30;
+                        Data=8'b00001110; RD = 0;WR=1; Addres= 8'b00001110; #30;
+                        Data=8'b00001111; RD = 0;WR=1; Addres= 8'b00001111; #30;
+                        RD = 1;WR=0; Addres= 8'b00000000; #30;
+                        RD = 1;WR=0; Addres= 8'b00000001; #30;
+                        RD = 1;WR=0; Addres= 8'b00000010; #30;
+                        RD = 1;WR=0; Addres= 8'b00000011; #30;
+                        RD =1; WR=0; Addres= 8'b00000100; #30;
+                        RD = 1;WR=0; Addres= 8'b00000101; #30; 
+                        RD = 1;WR=0; Addres= 8'b00000110; #30;
+                        RD = 1;WR=0; Addres= 8'b00000111; #30;
+                        RD = 1;WR=0; Addres= 8'b00001000; #30;
+                        RD = 1;WR=0; Addres= 8'b00001001; #30;
+                        RD = 1;WR=0; Addres= 8'b00001010; #30;
+                        RD = 1;WR=0; Addres= 8'b00001011; #30;
+                        RD = 1;WR=0; Addres= 8'b00001100; #30;
+                        RD = 1;WR=0; Addres= 8'b00001101; #30;
+                        RD = 1;WR=0; Addres= 8'b00001110; #30;
+                        RD = 1;WR=0; Addres= 8'b00001111; #30;
+end
+endmodule
 ```
